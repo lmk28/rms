@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Kassensystem</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Restaurant Kassensystem</h1>
+            <nav>
+                <button class="tablink" onclick="openTab(event, 'Kassensystem')">Kassensystem</button>
+                <button class="tablink" onclick="openTab(event, 'Bestellübersicht')">Bestellübersicht</button>
+            </nav>
+        </header>
+        <main>
+            <section id="Kassensystem" class="tabcontent">
+                <h2>Menü</h2>
+                <div class="menu-item">
+                    <span>Pizza Margherita</span>
+                    <input type="text" id="note-pizza-margherita" placeholder="Anmerkung">
+                    <button onclick="addItem('Pizza Margherita', 8.50, 'note-pizza-margherita')">Hinzufügen</button>
+                </div>
+                <div class="menu-item">
+                    <span>Pasta Carbonara</span>
+                    <input type="text" id="note-pasta-carbonara" placeholder="Anmerkung">
+                    <button onclick="addItem('Pasta Carbonara', 10.00, 'note-pasta-carbonara')">Hinzufügen</button>
+                </div>
+                <div class="menu-item">
+                    <span>Caesar Salat</span>
+                    <input type="text" id="note-caesar-salat" placeholder="Anmerkung">
+                    <button onclick="addItem('Caesar Salat', 6.50, 'note-caesar-salat')">Hinzufügen</button>
+                </div>
+                <!-- Weitere Menüelemente hier hinzufügen -->
+                <h2>Bestellübersicht</h2>
+                <ul id="order-list"></ul>
+                <p id="total-price">Gesamt: €0.00</p>
+                <button onclick="clearOrder()">Bestellung löschen</button>
+                <button onclick="submitOrder()">Bestellung abschicken</button>
+            </section>
+            <section id="Bestellübersicht" class="tabcontent">
+                <h2>Alle Bestellungen</h2>
+                <ul id="all-orders-list"></ul>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
