@@ -1,13 +1,15 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
 let orders = []; // Speicherung der Bestellungen im Speicher
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-app.post('/submit-order', (req, res) => {
+app.post('/api/submit-order', (req, res) => {
     const order = req.body.order;
     const totalPrice = req.body.totalPrice;
 
@@ -22,7 +24,7 @@ app.post('/submit-order', (req, res) => {
     res.json({ message: 'Bestellung erfolgreich empfangen!' });
 });
 
-app.get('/get-orders', (req, res) => {
+app.get('/api/get-orders', (req, res) => {
     res.json({ orders });
 });
 
