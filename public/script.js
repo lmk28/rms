@@ -29,7 +29,7 @@ function clearOrder() {
 }
 
 function submitOrder() {
-    fetch('https://rms-clover.vercel.app/api/submit-order', {
+    fetch('/submit-order', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ function submitOrder() {
 }
 
 function fetchOrders() {
-    fetch('https://rms-clover.vercel.app/api/get-orders')
+    fetch('/get-orders')
     .then(response => response.json())
     .then(data => {
         const allOrdersList = document.getElementById('all-orders-list');
